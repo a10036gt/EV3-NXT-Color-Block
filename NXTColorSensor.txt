@@ -1,0 +1,13 @@
+NXT
+Color Sensor for EV3
+Type=4 
+Mode:
+0=red
+1=amb
+3=green
+4=blue
+
+Some data found in LabVIEW.
+
+20170830 OFDL Developer Group.
+update 20170911 1.3

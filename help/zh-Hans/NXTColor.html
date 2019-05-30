@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>NXT Color Sensor Block -- Build By OFDL Taiwan</title>
+</head>
+<body BGCOLOR="FFFFFF">
+<h1>NXT Color Sensor Block for EV3-G</h1>
+<img src="NXTColor.png" width="50" height="50" />
+<p>
+在LEGO&reg; MINDSTORMS&reg; EV3軟體中，可以使用Color Sensor Block來控制NXT的Color Sensor，但並不支持開啟綠光及藍光這2個模式，<br>
+因此我們通過修改內核，添加了這2種測光模式，並且額外新增了<b>Raw Mode</b>，好讓各位可以在EV3上更進階的使用NXT Color Sensor。<br>
+<br><br>
+本Block為OFDL創意翻轉數位研究社之開發團隊所製作，如有任何問題，歡迎來信指教。
+<a href="https://www.facebook.com/cljhofdl">OFDL Facebook Page</a>
+<br><br>
+注意：本Block建議在EV3 Firmware 1.06版或以上(涵蓋Education、Home、Developer及LabVIEW&reg;版本韌體)運行，以保證其穩定性。<br>
+</p>
+<hr>
+<h2>分類-Category</h2>
+<h3>・Measure - NXT Color</h3>
+<p>
+本模式提供了NXT-G中原有的 Color Detect Block 模式中所有的量測功能。
+</p>
+<h3>・Measure - NXT Color (Raw)</h3>
+<p>
+本模式提供了除Color外，其餘四種模式的感測器原始值。
+</p>
+<h3>・Compare - NXT Color </h3>
+<p>
+本模式提供了NXT Color模式中，其讀出值比較的功能。
+</p>
+<h3>・Compare - NXT Color (Raw)</h3>
+<p>
+本模式提供了NXT Color Raw模式中，其讀出原值比較的功能。
+</p>
+<hr>
+<h2>模式-Modes</h2>
+<p>除Measure - NXT Color (RAW)分類中去除了讀取Color的模式，其餘分別為Ambient環境光、Red紅光、Green綠光與Blue藍光。</p>
+<h3>・Color</h3>
+<p>開啟3顆LED，讀取出值域為1~6的顏色值，其顏色值如下表：</p>
+1 = Black <br>
+2 = Blue <br>
+3 = Green <br>
+4 = Yellow <br>
+5 = Red <br>
+6 = White<br>
+<h3>・Ambient Light Intensity</h3>
+<p>關閉所有LED，讀取環境光數值。</p>
+<h3>・Reflected Light Intensity (Red)</h3>
+<p>僅開啟紅色LED，讀取紅色反射光值。</p>
+<h3>・Reflected Light Intensity (Green)</h3>
+<p>僅開啟綠色LED，讀取綠色反射光值。</p>
+<h3>・Reflected Light Intensity (Blue)</h3>
+<p>僅開啟藍色LED，讀取藍色反射光值。</p>
+</p>
+<hr>
+<footer>
+<a href="https://www.facebook.com/cljhofdl">Original Flipped Digital Lab</a> , OFDL Taiwan © 2017 
+</footer>
+</body>
+</html>
