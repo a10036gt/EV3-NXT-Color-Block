@@ -1,330 +1,367 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <EditorDefinitions>
-  <PolyGroups ModuleName="NXTColor" ModuleVersion="1.3 (By OFDL Dev.)">
-	<PolyGroup Name="NXTColor" BlockFamily="Sensor">
-      <Parameter Name="Direction" Direction="Input" DataType="UInt32" DefaultValue="2" Configuration="builtin://Identification_WaitForChange.xml" Identification="builtin://Identification_WaitForChange.xml" />
-      <Parameter Name="Port" CompilerDirectives="OneInputPort" Direction="Input" DefaultValue="1.3" />
-      <Parameter Name="Comparison" Direction="Input" Configuration="builtin://Identification_ComparisonType.xml" Identification="builtin://Identification_ComparisonType.xml" DataType="Int32" DefaultValue="4" />
-      <Parameter Name="Threshold" Identification="builtin://Identification_Threshold_UltrasonicInches.xml" DataType="Single" Direction="Input" DefaultValue="50" MinValue="0" MaxValue="10000" />
-      <Parameter Name="Amount" Identification="builtin://Identification_Numeric.png" DataType="Single" Direction="Input" DefaultValue="10" />
-      <Parameter Name="i" CompilerDirectives="WaitForIteration" DataType="Int32" Direction="Input" DefaultValue="0" />
-      <Parameter Name="Color" Identification="Identification_MeasuredColor.png" ValueDisplay="Identification_Color.xml" Configuration="Identification_Color.xml" Direction="Output" DataType="Single" ModeCanSpecifyProperties="True" />
-	  <Parameter Name="Value" Identification="Identification_MeasuredLight.png" DataType="Single" Direction="Output" />
-	  <Parameter Name="RawValue" Identification="builtin://Identification_Numeric.png" DataType="Single" Direction="Output" />
-      <Parameter Name="Result" CompilerDirectives="Result" Identification="builtin://Identification_CompareResult.png" DataType="Boolean" Direction="Output" />
-      <Hardware>
-        <NXTPlotColor>#ffff3132</NXTPlotColor>
-        <EV3PlotColor>#ff785028</EV3PlotColor>
-        <EV3AutoID>4</EV3AutoID>
-		<Direction>Input</Direction>
-        <DefaultPort>1.3</DefaultPort>
-      </Hardware>
-     <Category Name="Msr-NXTColor">
-	    <Block>
-          <Mode>MeasureNXTColor</Mode>
-          <Reference Type="VILib" Name="ReadNXTColor_Color.vix" />
-          <ParameterReference Name="Port" />
-          <ParameterReference Name="Color" CompilerDirectives="Result" />
-          <PaletteInfo Weight="0.5" />
-          <BlockInterface>Selector</BlockInterface>
-          <Hardware>NxtColor</Hardware>
-          <HardwareModeInfo Name="COL-COLOR" ID="2" Range="1,6" Unit="" />
-        </Block>
-	    <Block>
-          <Mode>MeasureNXTRed</Mode>
-          <Reference Type="VILib" Name="ReadNXTColor_Red.vix" />
-          <ParameterReference Name="Port" />
-          <ParameterReference Name="Value" />
-          <BlockInterface>Measure</BlockInterface>
-          <Flags></Flags>
-          <Hardware></Hardware>
-          <HardwareModeInfo Name="COL-RED" ID="0" Range="0,100" Unit="%" />
-        </Block>
-	    <Block>
-          <Mode>MeasureNXTGreen</Mode>
-          <Reference Type="VILib" Name="ReadNXTColor_Green.vix" />
-          <ParameterReference Name="Port" />
-          <ParameterReference Name="Value" />
-          <BlockInterface>Measure</BlockInterface>
-          <Flags></Flags>
-          <Hardware></Hardware>
-          <HardwareModeInfo Name="COL-GREEN" ID="3" Range="0,100" Unit="%" />
-        </Block>
-	    <Block>
-          <Mode>MeasureNXTBlue</Mode>
-          <Reference Type="VILib" Name="ReadNXTColor_Blue.vix" />
-          <ParameterReference Name="Port" />
-          <ParameterReference Name="Value" />
-          <BlockInterface>Measure</BlockInterface>
-          <Flags></Flags>
-          <Hardware></Hardware>
-          <HardwareModeInfo Name="COL-BLUE" ID="4" Range="0,100" Unit="%" />
-        </Block>
-	    <Block>
-          <Mode>MeasureNXTAmbient</Mode>
-          <Reference Type="VILib" Name="ReadNXTColor_Ambient.vix" />
-          <ParameterReference Name="Port" />
-          <ParameterReference Name="Value" />
-          <BlockInterface>Measure</BlockInterface>
-          <Flags></Flags>
-          <Hardware></Hardware>
-          <HardwareModeInfo Name="COL-AMBIENT" ID="1" Range="0,100" Unit="%" />
-        </Block>
-	 </Category>
-	 <Category Name="Msr-NXTColorRAW">
-		<Block>
-          <Mode>MeasureNXTRedRAW</Mode>
-          <Reference Type="VILib" Name="ReadNXTColorRaw_Red.vix" />
-          <ParameterReference Name="Port" />
-          <ParameterReference Name="RawValue" />
-          <BlockInterface>Measure</BlockInterface>
-          <Flags></Flags>
-          <Hardware></Hardware>
-          <HardwareModeInfo Name="COL-RED_RAW" ID="0" Range="0,2000" Unit="%" />
-        </Block>
-	    <Block>
-          <Mode>MeasureNXTGreenRAW</Mode>
-          <Reference Type="VILib" Name="ReadNXTColorRaw_Green.vix" />
-          <ParameterReference Name="Port" />
-          <ParameterReference Name="RawValue" />
-          <BlockInterface>Measure</BlockInterface>
-          <Flags></Flags>
-          <Hardware></Hardware>
-          <HardwareModeInfo Name="COL-GREEN_RAW" ID="3" Range="0,2000" Unit="%" />
-        </Block>
-	    <Block>
-          <Mode>MeasureNXTBlueRAW</Mode>
-          <Reference Type="VILib" Name="ReadNXTColorRaw_Blue.vix" />
-          <ParameterReference Name="Port" />
-          <ParameterReference Name="RawValue" />
-          <BlockInterface>Measure</BlockInterface>
-          <Flags></Flags>
-          <Hardware></Hardware>
-          <HardwareModeInfo Name="COL-BLUE_RAW" ID="4" Range="0,2000" Unit="%" />
-        </Block>
-	    <Block>
-          <Mode>MeasureNXTAmbientRAW</Mode>
-          <Reference Type="VILib" Name="ReadNXTColorRaw_Ambient.vix" />
-          <ParameterReference Name="Port" />
-          <ParameterReference Name="RawValue" />
-          <BlockInterface>Measure</BlockInterface>
-          <Flags></Flags>
-          <Hardware></Hardware>
-          <HardwareModeInfo Name="COL-AMBIENT_RAW" ID="1" Range="0,2000" Unit="%" />
-        </Block>
-	 </Category>
-     <Category Name="Cmp-NXTColor">
-          <Block>
-          <Mode>CompareNXTColor</Mode>
-          <Reference Type="VILib" Name="NXTColorCompare.vix" />
-          <ParameterReference Name="Port" />
-          <ParamInfo Name="Set of colors" Direction="Input" Configuration="Identification_Color.xml" Identification="Identification_Color.xml" DataType="Single[]" DefaultValue="[5]" />
-          <ParameterReference Name="Result" />
-          <ParameterReference Name="Color" />
-          <BlockInterface>Compare</BlockInterface>
-          <Flags></Flags>
-        </Block>
-		<Block>
-          <Mode>CompareNXTRed</Mode>
-          <Reference Type="VILib" Name="ReadNXTColor_Red_Compare.vix" />
-          <ParameterReference Name="Port" />
-          <ParameterReference Name="Comparison" />
-          <ParameterReference Name="Threshold" />
-          <ParameterReference Name="Result" />
-          <ParameterReference Name="Value" />
-          <BlockInterface>Compare</BlockInterface>
-          <Flags></Flags>
-        </Block>
-		<Block>
-          <Mode>CompareNXTGreen</Mode>
-          <Reference Type="VILib" Name="ReadNXTColor_Green_Compare.vix" />
-          <ParameterReference Name="Port" />
-          <ParameterReference Name="Comparison" />
-          <ParameterReference Name="Threshold" />
-          <ParameterReference Name="Result" />
-          <ParameterReference Name="Value" />
-          <BlockInterface>Compare</BlockInterface>
-          <Flags></Flags>
-        </Block>
-		<Block>
-          <Mode>CompareNXTBlue</Mode>
-          <Reference Type="VILib" Name="ReadNXTColor_Blue_Compare.vix" />
-          <ParameterReference Name="Port" />
-          <ParameterReference Name="Comparison" />
-          <ParameterReference Name="Threshold" />
-          <ParameterReference Name="Result" />
-          <ParameterReference Name="Value" />
-          <BlockInterface>Compare</BlockInterface>
-          <Flags></Flags>
-        </Block>
-		<Block>
-          <Mode>CompareNXTAmbient</Mode>
-          <Reference Type="VILib" Name="ReadNXTColor_Ambient_Compare.vix" />
-          <ParameterReference Name="Port" />
-          <ParameterReference Name="Comparison" />
-          <ParameterReference Name="Threshold" />
-          <ParameterReference Name="Result" />
-          <ParameterReference Name="Value" />
-          <BlockInterface>Compare</BlockInterface>
-          <Flags></Flags>
-        </Block>
-	 </Category>
-     <Category Name="Cmp-NXTColorRAW">
-		<Block>
-          <Mode>CompareNXTRedRAW</Mode>
-          <Reference Type="VILib" Name="ReadNXTColorRaw_Red_Compare.vix" />
-          <ParameterReference Name="Port" />
-          <ParameterReference Name="Comparison" />
-          <ParameterReference Name="Threshold" />
-          <ParameterReference Name="Result" />
-          <ParameterReference Name="RawValue" />
-          <BlockInterface>Compare</BlockInterface>
-          <Flags></Flags>
-        </Block>
-		<Block>
-          <Mode>CompareNXTGreenRAW</Mode>
-          <Reference Type="VILib" Name="ReadNXTColorRaw_Green_Compare.vix" />
-          <ParameterReference Name="Port" />
-          <ParameterReference Name="Comparison" />
-          <ParameterReference Name="Threshold" />
-          <ParameterReference Name="Result" />
-          <ParameterReference Name="RawValue" />
-          <BlockInterface>Compare</BlockInterface>
-          <Flags></Flags>
-        </Block>
-		<Block>
-          <Mode>CompareNXTBlueRAW</Mode>
-          <Reference Type="VILib" Name="ReadNXTColorRaw_Blue_Compare.vix" />
-          <ParameterReference Name="Port" />
-          <ParameterReference Name="Comparison" />
-          <ParameterReference Name="Threshold" />
-          <ParameterReference Name="Result" />
-          <ParameterReference Name="RawValue" />
-          <BlockInterface>Compare</BlockInterface>
-          <Flags></Flags>
-        </Block>
-		<Block>
-          <Mode>CompareNXTAmbientRAW</Mode>
-          <Reference Type="VILib" Name="ReadNXTColorRaw_Ambient_Compare.vix" />
-          <ParameterReference Name="Port" />
-          <ParameterReference Name="Comparison" />
-          <ParameterReference Name="Threshold" />
-          <ParameterReference Name="Result" />
-          <ParameterReference Name="RawValue" />
-          <BlockInterface>Compare</BlockInterface>
-          <Flags></Flags>
-        </Block>
-	 </Category>
-	 <Category Name="Chg-NXTColor">
-        <Block>
-          <Mode>ChangeNXTColor</Mode>
-          <Reference Type="VILib" Name="NXTColorChange.vix" />
-          <ParameterReference Name="Port" />
-          <ParameterReference Name="Color" />
-          <ParameterReference Name="Result" />
-          <ParameterReference Name="i" />
-          <BlockInterface>Change</BlockInterface>
-          <Flags></Flags>
-        </Block>
-		<Block>
-          <Mode>ChangeNXTRed</Mode>
-          <Reference Type="VILib" Name="ReadNXTColor_Red_Change.vix" />
-          <ParameterReference Name="Port" />
-          <ParameterReference Name="Direction" />
-          <ParameterReference Name="Amount" />
-          <ParameterReference Name="Value" />
-          <ParameterReference Name="Result" />
-          <ParameterReference Name="i" />
-          <BlockInterface>Change</BlockInterface>
-          <Flags></Flags>
-        </Block>
-		<Block>
-          <Mode>ChangeNXTGreen</Mode>
-          <Reference Type="VILib" Name="ReadNXTColor_Green_Change.vix" />
-          <ParameterReference Name="Port" />
-          <ParameterReference Name="Direction" />
-          <ParameterReference Name="Amount" />
-          <ParameterReference Name="Value" />
-          <ParameterReference Name="Result" />
-          <ParameterReference Name="i" />
-          <BlockInterface>Change</BlockInterface>
-          <Flags></Flags>
-        </Block>
-		<Block>
-          <Mode>ChangeNXTBlue</Mode>
-          <Reference Type="VILib" Name="ReadNXTColor_Blue_Change.vix" />
-          <ParameterReference Name="Port" />
-          <ParameterReference Name="Direction" />
-          <ParameterReference Name="Amount" />
-          <ParameterReference Name="Value" />
-          <ParameterReference Name="Result" />
-          <ParameterReference Name="i" />
-          <BlockInterface>Change</BlockInterface>
-          <Flags></Flags>
-        </Block>
-		<Block>
-          <Mode>ChangeNXTAmbient</Mode>
-          <Reference Type="VILib" Name="ReadNXTColor_Ambient_Change.vix" />
-          <ParameterReference Name="Port" />
-          <ParameterReference Name="Direction" />
-          <ParameterReference Name="Amount" />
-          <ParameterReference Name="Value" />
-          <ParameterReference Name="Result" />
-          <ParameterReference Name="i" />
-          <BlockInterface>Change</BlockInterface>
-          <Flags></Flags>
-        </Block>
-	 </Category>
-	 <Category Name="Chg-NXTColorRAW">
-		<Block>
-          <Mode>ChangeNXTRedRAW</Mode>
-          <Reference Type="VILib" Name="ReadNXTColorRaw_Red_Change.vix" />
-          <ParameterReference Name="Port" />
-          <ParameterReference Name="Direction" />
-          <ParameterReference Name="Amount" />
-          <ParameterReference Name="Value" />
-          <ParameterReference Name="Result" />
-          <ParameterReference Name="i" />
-          <BlockInterface>Change</BlockInterface>
-          <Flags></Flags>
-        </Block>
-		<Block>
-          <Mode>ChangeNXTGreenRAW</Mode>
-          <Reference Type="VILib" Name="ReadNXTColorRaw_Green_Change.vix" />
-          <ParameterReference Name="Port" />
-          <ParameterReference Name="Direction" />
-          <ParameterReference Name="Amount" />
-          <ParameterReference Name="Value" />
-          <ParameterReference Name="Result" />
-          <ParameterReference Name="i" />
-          <BlockInterface>Change</BlockInterface>
-          <Flags></Flags>
-        </Block>
-		<Block>
-          <Mode>ChangeNXTBlueRAW</Mode>
-          <Reference Type="VILib" Name="ReadNXTColorRaw_Blue_Change.vix" />
-          <ParameterReference Name="Port" />
-          <ParameterReference Name="Direction" />
-          <ParameterReference Name="Amount" />
-          <ParameterReference Name="Value" />
-          <ParameterReference Name="Result" />
-          <ParameterReference Name="i" />
-          <BlockInterface>Change</BlockInterface>
-          <Flags></Flags>
-        </Block>
-		<Block>
-          <Mode>ChangeNXTAmbientRAW</Mode>
-          <Reference Type="VILib" Name="ReadNXTColorRaw_Ambient_Change.vix" />
-          <ParameterReference Name="Port" />
-          <ParameterReference Name="Direction" />
-          <ParameterReference Name="Amount" />
-          <ParameterReference Name="Value" />
-          <ParameterReference Name="Result" />
-          <ParameterReference Name="i" />
-          <BlockInterface>Change</BlockInterface>
-          <Flags></Flags>
-        </Block>
-	 </Category>
-    </PolyGroup>
-  </PolyGroups>
+	<PolyGroups ModuleName="NXTColor" ModuleVersion="2.0 (By OFDL Dev.)">
+		<PolyGroup Name="NXTColor" BlockFamily="Sensor">
+			<Parameter Name="Direction" Direction="Input" DataType="UInt32" DefaultValue="2" Configuration="builtin://Identification_WaitForChange.xml" Identification="builtin://Identification_WaitForChange.xml" />
+			<Parameter Name="Port" CompilerDirectives="OneInputPort" Direction="Input" DefaultValue="1.3" />
+			<Parameter Name="Comparison" Direction="Input" Configuration="builtin://Identification_ComparisonType.xml" Identification="builtin://Identification_ComparisonType.xml" DataType="Int32" DefaultValue="4" />
+			<Parameter Name="Threshold" Identification="builtin://Identification_Threshold_UltrasonicInches.xml" DataType="Single" Direction="Input" DefaultValue="50" MinValue="0" MaxValue="10000" />
+			<Parameter Name="Amount" Identification="builtin://Identification_Numeric.png" DataType="Single" Direction="Input" DefaultValue="10" />
+			<Parameter Name="i" CompilerDirectives="WaitForIteration" DataType="Int32" Direction="Input" DefaultValue="0" />
+			<Parameter Name="Color" Identification="Identification_MeasuredColor.png" ValueDisplay="Identification_Color.xml" Configuration="Identification_Color.xml" Direction="Output" DataType="Single" ModeCanSpecifyProperties="True" />
+			<Parameter Name="Value" Identification="Identification_MeasuredLight.png" DataType="Single" Direction="Output" />
+			<Parameter Name="RawValue" Identification="builtin://Identification_Numeric.png" DataType="Single" Direction="Output" />
+			<Parameter Name="Result" CompilerDirectives="Result" Identification="builtin://Identification_CompareResult.png" DataType="Boolean" Direction="Output" />
+			<Parameter Name="Min" Identification="builtin://Identification_Threshold_Equal_-2.png" DataType="Single" Direction="Input" DefaultValue="0"/>
+			<Parameter Name="Max" Identification="builtin://Identification_Threshold_Less_+2.png" DataType="Single" Direction="Input" DefaultValue="3072" />
+			<Hardware>
+				<NXTPlotColor>#ffff3132</NXTPlotColor>
+				<EV3PlotColor>#ff785028</EV3PlotColor>
+				<EV3AutoID>4</EV3AutoID>
+				<Direction>Input</Direction>
+				<DefaultPort>1.3</DefaultPort>
+			</Hardware>
+			<Category Name="Msr-NXTColor">
+				<Block>
+					<Mode>MeasureNXTColor</Mode>
+					<Reference Type="VILib" Name="ReadNXTColor_Color.vix" />
+					<ParameterReference Name="Port" />
+					<ParameterReference Name="Color" CompilerDirectives="Result" />
+					<PaletteInfo Weight="0.5" />
+					<BlockInterface>Selector</BlockInterface>
+					<Hardware>NxtColor</Hardware>
+					<HardwareModeInfo Name="COL-COLOR" ID="2" Range="1,6" Unit="" />
+				</Block>
+				<Block>
+					<Mode>MeasureNXTRed</Mode>
+					<Reference Type="VILib" Name="ReadNXTColor_Red.vix" />
+					<ParameterReference Name="Port" />
+					<ParameterReference Name="Value" />
+					<BlockInterface>Measure</BlockInterface>
+					<Flags></Flags>
+					<Hardware></Hardware>
+					<HardwareModeInfo Name="COL-RED" ID="0" Range="0,100" Unit="%" />
+				</Block>
+				<Block>
+					<Mode>MeasureNXTGreen</Mode>
+					<Reference Type="VILib" Name="ReadNXTColor_Green.vix" />
+					<ParameterReference Name="Port" />
+					<ParameterReference Name="Value" />
+					<BlockInterface>Measure</BlockInterface>
+					<Flags></Flags>
+					<Hardware></Hardware>
+					<HardwareModeInfo Name="COL-GREEN" ID="3" Range="0,100" Unit="%" />
+				</Block>
+				<Block>
+					<Mode>MeasureNXTBlue</Mode>
+					<Reference Type="VILib" Name="ReadNXTColor_Blue.vix" />
+					<ParameterReference Name="Port" />
+					<ParameterReference Name="Value" />
+					<BlockInterface>Measure</BlockInterface>
+					<Flags></Flags>
+					<Hardware></Hardware>
+					<HardwareModeInfo Name="COL-BLUE" ID="4" Range="0,100" Unit="%" />
+				</Block>
+				<Block>
+					<Mode>MeasureNXTAmbient</Mode>
+					<Reference Type="VILib" Name="ReadNXTColor_Ambient.vix" />
+					<ParameterReference Name="Port" />
+					<ParameterReference Name="Value" />
+					<BlockInterface>Measure</BlockInterface>
+					<Flags></Flags>
+					<Hardware></Hardware>
+					<HardwareModeInfo Name="COL-AMBIENT" ID="1" Range="0,100" Unit="%" />
+				</Block>
+			</Category>
+			<Category Name="Msr-NXTColorRAW">
+				<Block>
+					<Mode>MeasureNXTRedRAW</Mode>
+					<Reference Type="VILib" Name="ReadNXTColorRaw_Red.vix" />
+					<ParameterReference Name="Port" />
+					<ParameterReference Name="RawValue" />
+					<BlockInterface>Measure</BlockInterface>
+					<Flags></Flags>
+					<Hardware></Hardware>
+					<HardwareModeInfo Name="COL-RED_RAW" ID="0" Range="0,2000" Unit="%" />
+				</Block>
+				<Block>
+					<Mode>MeasureNXTGreenRAW</Mode>
+					<Reference Type="VILib" Name="ReadNXTColorRaw_Green.vix" />
+					<ParameterReference Name="Port" />
+					<ParameterReference Name="RawValue" />
+					<BlockInterface>Measure</BlockInterface>
+					<Flags></Flags>
+					<Hardware></Hardware>
+					<HardwareModeInfo Name="COL-GREEN_RAW" ID="3" Range="0,2000" Unit="%" />
+				</Block>
+				<Block>
+					<Mode>MeasureNXTBlueRAW</Mode>
+					<Reference Type="VILib" Name="ReadNXTColorRaw_Blue.vix" />
+					<ParameterReference Name="Port" />
+					<ParameterReference Name="RawValue" />
+					<BlockInterface>Measure</BlockInterface>
+					<Flags></Flags>
+					<Hardware></Hardware>
+					<HardwareModeInfo Name="COL-BLUE_RAW" ID="4" Range="0,2000" Unit="%" />
+				</Block>
+				<Block>
+					<Mode>MeasureNXTAmbientRAW</Mode>
+					<Reference Type="VILib" Name="ReadNXTColorRaw_Ambient.vix" />
+					<ParameterReference Name="Port" />
+					<ParameterReference Name="RawValue" />
+					<BlockInterface>Measure</BlockInterface>
+					<Flags></Flags>
+					<Hardware></Hardware>
+					<HardwareModeInfo Name="COL-AMBIENT_RAW" ID="1" Range="0,2000" Unit="%" />
+				</Block>
+			</Category>
+			<Category Name="Cmp-NXTColor">
+				<Block>
+					<Mode>CompareNXTColor</Mode>
+					<Reference Type="VILib" Name="NXTColorCompare.vix" />
+					<ParameterReference Name="Port" />
+					<ParamInfo Name="Set of colors" Direction="Input" Configuration="Identification_Color.xml" Identification="Identification_Color.xml" DataType="Single[]" DefaultValue="[5]" />
+					<ParameterReference Name="Result" />
+					<ParameterReference Name="Color" />
+					<BlockInterface>Compare</BlockInterface>
+					<Flags></Flags>
+				</Block>
+				<Block>
+					<Mode>CompareNXTRed</Mode>
+					<Reference Type="VILib" Name="ReadNXTColor_Red_Compare.vix" />
+					<ParameterReference Name="Port" />
+					<ParameterReference Name="Comparison" />
+					<ParameterReference Name="Threshold" />
+					<ParameterReference Name="Result" />
+					<ParameterReference Name="Value" />
+					<BlockInterface>Compare</BlockInterface>
+					<Flags></Flags>
+				</Block>
+				<Block>
+					<Mode>CompareNXTGreen</Mode>
+					<Reference Type="VILib" Name="ReadNXTColor_Green_Compare.vix" />
+					<ParameterReference Name="Port" />
+					<ParameterReference Name="Comparison" />
+					<ParameterReference Name="Threshold" />
+					<ParameterReference Name="Result" />
+					<ParameterReference Name="Value" />
+					<BlockInterface>Compare</BlockInterface>
+					<Flags></Flags>
+				</Block>
+				<Block>
+					<Mode>CompareNXTBlue</Mode>
+					<Reference Type="VILib" Name="ReadNXTColor_Blue_Compare.vix" />
+					<ParameterReference Name="Port" />
+					<ParameterReference Name="Comparison" />
+					<ParameterReference Name="Threshold" />
+					<ParameterReference Name="Result" />
+					<ParameterReference Name="Value" />
+					<BlockInterface>Compare</BlockInterface>
+					<Flags></Flags>
+				</Block>
+				<Block>
+					<Mode>CompareNXTAmbient</Mode>
+					<Reference Type="VILib" Name="ReadNXTColor_Ambient_Compare.vix" />
+					<ParameterReference Name="Port" />
+					<ParameterReference Name="Comparison" />
+					<ParameterReference Name="Threshold" />
+					<ParameterReference Name="Result" />
+					<ParameterReference Name="Value" />
+					<BlockInterface>Compare</BlockInterface>
+					<Flags></Flags>
+				</Block>
+			</Category>
+			<Category Name="Cmp-NXTColorRAW">
+				<Block>
+					<Mode>CompareNXTRedRAW</Mode>
+					<Reference Type="VILib" Name="ReadNXTColorRaw_Red_Compare.vix" />
+					<ParameterReference Name="Port" />
+					<ParameterReference Name="Comparison" />
+					<ParameterReference Name="Threshold" />
+					<ParameterReference Name="Result" />
+					<ParameterReference Name="RawValue" />
+					<BlockInterface>Compare</BlockInterface>
+					<Flags></Flags>
+				</Block>
+				<Block>
+					<Mode>CompareNXTGreenRAW</Mode>
+					<Reference Type="VILib" Name="ReadNXTColorRaw_Green_Compare.vix" />
+					<ParameterReference Name="Port" />
+					<ParameterReference Name="Comparison" />
+					<ParameterReference Name="Threshold" />
+					<ParameterReference Name="Result" />
+					<ParameterReference Name="RawValue" />
+					<BlockInterface>Compare</BlockInterface>
+					<Flags></Flags>
+				</Block>
+				<Block>
+					<Mode>CompareNXTBlueRAW</Mode>
+					<Reference Type="VILib" Name="ReadNXTColorRaw_Blue_Compare.vix" />
+					<ParameterReference Name="Port" />
+					<ParameterReference Name="Comparison" />
+					<ParameterReference Name="Threshold" />
+					<ParameterReference Name="Result" />
+					<ParameterReference Name="RawValue" />
+					<BlockInterface>Compare</BlockInterface>
+					<Flags></Flags>
+				</Block>
+				<Block>
+					<Mode>CompareNXTAmbientRAW</Mode>
+					<Reference Type="VILib" Name="ReadNXTColorRaw_Ambient_Compare.vix" />
+					<ParameterReference Name="Port" />
+					<ParameterReference Name="Comparison" />
+					<ParameterReference Name="Threshold" />
+					<ParameterReference Name="Result" />
+					<ParameterReference Name="RawValue" />
+					<BlockInterface>Compare</BlockInterface>
+					<Flags></Flags>
+				</Block>
+			</Category>
+			<Category Name="Chg-NXTColor">
+				<Block>
+					<Mode>ChangeNXTColor</Mode>
+					<Reference Type="VILib" Name="NXTColorChange.vix" />
+					<ParameterReference Name="Port" />
+					<ParameterReference Name="Color" />
+					<ParameterReference Name="Result" />
+					<ParameterReference Name="i" />
+					<BlockInterface>Change</BlockInterface>
+					<Flags></Flags>
+				</Block>
+				<Block>
+					<Mode>ChangeNXTRed</Mode>
+					<Reference Type="VILib" Name="ReadNXTColor_Red_Change.vix" />
+					<ParameterReference Name="Port" />
+					<ParameterReference Name="Direction" />
+					<ParameterReference Name="Amount" />
+					<ParameterReference Name="Value" />
+					<ParameterReference Name="Result" />
+					<ParameterReference Name="i" />
+					<BlockInterface>Change</BlockInterface>
+					<Flags></Flags>
+				</Block>
+				<Block>
+					<Mode>ChangeNXTGreen</Mode>
+					<Reference Type="VILib" Name="ReadNXTColor_Green_Change.vix" />
+					<ParameterReference Name="Port" />
+					<ParameterReference Name="Direction" />
+					<ParameterReference Name="Amount" />
+					<ParameterReference Name="Value" />
+					<ParameterReference Name="Result" />
+					<ParameterReference Name="i" />
+					<BlockInterface>Change</BlockInterface>
+					<Flags></Flags>
+				</Block>
+				<Block>
+					<Mode>ChangeNXTBlue</Mode>
+					<Reference Type="VILib" Name="ReadNXTColor_Blue_Change.vix" />
+					<ParameterReference Name="Port" />
+					<ParameterReference Name="Direction" />
+					<ParameterReference Name="Amount" />
+					<ParameterReference Name="Value" />
+					<ParameterReference Name="Result" />
+					<ParameterReference Name="i" />
+					<BlockInterface>Change</BlockInterface>
+					<Flags></Flags>
+				</Block>
+				<Block>
+					<Mode>ChangeNXTAmbient</Mode>
+					<Reference Type="VILib" Name="ReadNXTColor_Ambient_Change.vix" />
+					<ParameterReference Name="Port" />
+					<ParameterReference Name="Direction" />
+					<ParameterReference Name="Amount" />
+					<ParameterReference Name="Value" />
+					<ParameterReference Name="Result" />
+					<ParameterReference Name="i" />
+					<BlockInterface>Change</BlockInterface>
+					<Flags></Flags>
+				</Block>
+			</Category>
+			<Category Name="Chg-NXTColorRAW">
+				<Block>
+					<Mode>ChangeNXTRedRAW</Mode>
+					<Reference Type="VILib" Name="ReadNXTColorRaw_Red_Change.vix" />
+					<ParameterReference Name="Port" />
+					<ParameterReference Name="Direction" />
+					<ParameterReference Name="Amount" />
+					<ParameterReference Name="Value" />
+					<ParameterReference Name="Result" />
+					<ParameterReference Name="i" />
+					<BlockInterface>Change</BlockInterface>
+					<Flags></Flags>
+				</Block>
+				<Block>
+					<Mode>ChangeNXTGreenRAW</Mode>
+					<Reference Type="VILib" Name="ReadNXTColorRaw_Green_Change.vix" />
+					<ParameterReference Name="Port" />
+					<ParameterReference Name="Direction" />
+					<ParameterReference Name="Amount" />
+					<ParameterReference Name="Value" />
+					<ParameterReference Name="Result" />
+					<ParameterReference Name="i" />
+					<BlockInterface>Change</BlockInterface>
+					<Flags></Flags>
+				</Block>
+				<Block>
+					<Mode>ChangeNXTBlueRAW</Mode>
+					<Reference Type="VILib" Name="ReadNXTColorRaw_Blue_Change.vix" />
+					<ParameterReference Name="Port" />
+					<ParameterReference Name="Direction" />
+					<ParameterReference Name="Amount" />
+					<ParameterReference Name="Value" />
+					<ParameterReference Name="Result" />
+					<ParameterReference Name="i" />
+					<BlockInterface>Change</BlockInterface>
+					<Flags></Flags>
+				</Block>
+				<Block>
+					<Mode>ChangeNXTAmbientRAW</Mode>
+					<Reference Type="VILib" Name="ReadNXTColorRaw_Ambient_Change.vix" />
+					<ParameterReference Name="Port" />
+					<ParameterReference Name="Direction" />
+					<ParameterReference Name="Amount" />
+					<ParameterReference Name="Value" />
+					<ParameterReference Name="Result" />
+					<ParameterReference Name="i" />
+					<BlockInterface>Change</BlockInterface>
+					<Flags></Flags>
+				</Block>
+			</Category>
+			<Category Name="NXTCol_Norm">
+				<Block>
+					<Mode>NXTCol_Norm1</Mode>
+					<Reference Type="VILib" Name="Read_NormNXTCol_P1.vix" />
+					<ParameterReference Name="Value" />
+				</Block>
+				<Block>
+					<Mode>NXTCol_Norm2</Mode>
+					<Reference Type="VILib" Name="Read_NormNXTCol_P2.vix" />
+					<ParameterReference Name="Value" />
+				</Block>
+				<Block>
+					<Mode>NXTCol_Norm3</Mode>
+					<Reference Type="VILib" Name="Read_NormNXTCol_P3.vix" />
+					<ParameterReference Name="Value" />
+				</Block>
+				<Block>
+					<Mode>NXTCol_Norm4</Mode>
+					<Reference Type="VILib" Name="Read_NormNXTCol_P4.vix" />
+					<ParameterReference Name="Value" />
+				</Block>
+			</Category>
+			<Block>
+				<Mode>ReadNXTColNorm</Mode>
+				<Reference Type="VILib" Name="Read_NormNXTCol.vix" />
+				<ParameterReference Name="Port" />
+				<ParameterReference Name="Value" />
+			</Block>
+			<Block>
+				<Mode>Configuration</Mode>
+				<Reference Type="VILib" Name="NXTCol_SensorConf.vix" />
+				<ParameterReference Name="Port" />
+				<ParameterReference Name="Min" />
+				<ParameterReference Name="Max" />
+			</Block>
+		</PolyGroup>
+	</PolyGroups>
 </EditorDefinitions>

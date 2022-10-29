@@ -1,3 +1,9 @@
+Add Norm Mode.
+update 20221028 2.0
+OFDL HSU
+
+-------------------
+
 NXT
 Color Sensor for EV3
 Type=4 

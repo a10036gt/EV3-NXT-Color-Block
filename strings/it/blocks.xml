@@ -1,242 +1,430 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <EditorStrings>
-  <PolyGroups ModuleName="NXTColor">
-	<PolyGroup Name="NXTColor" DisplayName="NXT Color Sensor" DisplayNamePrefix="NXTColor">
-	    <Description><![CDATA[<p>Context help for PolyGroup <b>NXT Color Sensor</b></p>]]></Description>
-      <Parameter Name="Direction" DisplayName="Direction" >
-        <Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> Direction for a Numeric sensor value to change.<br/>Used in Sensor Change Modes that have an Amount input.<br/>0 = Increase<br/>1 = Decrease<br/>2 = Any</p>]]></Description>
-      </Parameter>
-      <Parameter Name="Port" DisplayName="Port" >
-        <Description><![CDATA[Many programming blocks require that you select the ports on the EV3 Brick (A, B, C, D, 1, 2, 3, and 4) that these blocks will use. The Port Selectors are in the top right-hand corner of these blocks.]]></Description>
-      </Parameter>
-      <Parameter Name="Comparison" DisplayName="Compare Type">
-        <Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Allowed Values:</b> 0 - 5<br/><b>Notes:</b> 0:  = (Equal to)<br/>1:  ≠ (Not Equal to)<br/>2:  &gt; (Greater than)<br/>3:  ≥ (Greater than or Equal to)<br/>4:  &lt; (Less than)<br/>5:  ≤ (Less than or Equal to)</p>]]></Description>
-      </Parameter>
-      <Parameter Name="Threshold" DisplayName="Threshold Value">
-        <Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Allowed Values:</b> Any number<br/><b>Notes:</b> Value to compare sensor data to</p>]]></Description>
-      </Parameter>
-      <Parameter Name="Amount" DisplayName="Amount" >
-        <Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> Amount for sensor value to change in a Sensor Change Mode</p>]]></Description>
-      </Parameter>
-      <Parameter Name="Color" DisplayName="Color">
-        <Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> Detected color number: <br/>1 = Black <br/>2 = Blue <br/>3 = Green <br/>4 = Yellow <br/>5 = Red <br/>6 = White </p>]]></Description>
-      </Parameter>
-	  <Parameter Name="Value" DisplayName="Light">
-        <Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> The sensor data value used for a Compare mode.</p>]]></Description>
-      </Parameter>
-	  <Parameter Name="RawValue" DisplayName="Light (Raw)">
-        <Description><![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> The sensor data raw value used for a Compare mode.</p>]]]></Description>
-      </Parameter>
-      <Parameter Name="Result" DisplayName="Compare Result">
-        <Description><![CDATA[<p><b>Type:</b> Logic<br/><b>Notes:</b> True/False result of a Compare mode.</p>]]></Description>
-      </Parameter>
-	  <Parameter Name="Set of colors" DisplayName="Set of Colors">
-        <Description><![CDATA[<p><b>Type:</b> Numeric Array<br/><b>Allowed Values:</b> Each element: 1 – 6<br/><b>Notes:</b> Selected color(s) to test for in Compare – Color mode:<br/>1 = Black <br/>2 = Blue <br/>3 = Green <br/>4 = Yellow <br/>5 = Red <br/>6 = White </p>]]></Description>
-      </Parameter>
-      <Category Name="Msr-NXTColor" DisplayName="NXT Color">
-		<Block Mode="MeasureNXTColor" DisplayName="Color">
-          <Description><![CDATA[The Measure – NXT Color - Color mode outputs the detected color number in Color.]]></Description>
-        </Block>
-	    <Block Mode="MeasureNXTRed" DisplayName="Reflected Light Intensity (Red)">
-          <Description><![CDATA[The Measure – NXT Color - Reflected Light Intensity (Red) mode outputs the light intensity in Measured Value.]]></Description>
-        </Block>
-	    <Block Mode="MeasureNXTGreen" DisplayName="Reflected Light Intensity (Green)">
-          <Description><![CDATA[The Measure - NXT Color – Reflected Light Intensity (Green) mode outputs the light intensity in Measured Value.]]></Description>
-        </Block>
-	    <Block Mode="MeasureNXTBlue" DisplayName="Reflected Light Intensity (Blue)">
-          <Description><![CDATA[The Measure – NXT Color - Reflected Light Intensity mode (Blue) outputs the light intensity in Measured Value.]]></Description>
-        </Block>
-	    <Block Mode="MeasureNXTAmbient" DisplayName="Ambient Light Intensity">
-          <Description><![CDATA[The Measure – NXT Color - Ambient Light Intensity mode outputs the light intensity in Measured Value.]]></Description>
-        </Block>
-	  </Category>
-	  <Category Name="Msr-NXTColorRAW" DisplayName="NXT Color (Raw)">
-		<Block Mode="MeasureNXTRedRAW" DisplayName="Reflected Light Intensity (Red)">
-          <Description><![CDATA[The Measure – NXT Color (Raw) - Reflected Light Intensity (Red) mode outputs the light intensity in Measured Value.]]></Description>
-        </Block>
-	    <Block Mode="MeasureNXTGreenRAW" DisplayName="Reflected Light Intensity (Green)">
-          <Description><![CDATA[The Measure – NXT Color (Raw) - Reflected Light Intensity (Green) mode outputs the light intensity in Measured Value.]]></Description>
-        </Block>
-	    <Block Mode="MeasureNXTBlueRAW" DisplayName="Reflected Light Intensity (Blue)">
-          <Description><![CDATA[The Measure – NXT Color (Raw) - Reflected Light Intensity (Blue) mode outputs the light intensity in Measured Value.]]></Description>
-        </Block>
-	    <Block Mode="MeasureNXTAmbientRAW" DisplayName="Ambient Light Intensity">
-          <Description><![CDATA[The Measure – NXT Color (Raw) - Ambient Light Intensity mode outputs the light intensity in Measured Value.]]></Description>
-        </Block>
-	  </Category>
-	  <Category Name="Cmp-NXTColor" DisplayName="NXT Color">
-        <Block Mode="CompareNXTColor" DisplayName="Color">
-          <Description><![CDATA[In the Compare – NXT Color - Color mode, you can select one or more colors in the Set of Colors. The Compare Result output will be True if the detected color matches any of the selected colors. The detected color is output to Measured Value.]]></Description>
-        </Block>
-		<Block Mode="CompareNXTRed" DisplayName="Reflected Light Intensity (Red)">
-          <Description><![CDATA[The Compare – NXT Color - Reflected Light Intensity (Red) mode compare the detected light intensity to the Threshold Value using the selected Compare Type. The True/False result is output in Compare Result, and the detected light intensity is output in Measured Value.]]></Description>
-        </Block>
-		<Block Mode="CompareNXTGreen" DisplayName="Reflected Light Intensity (Green)">
-          <Description><![CDATA[The Compare – NXT Color - Reflected Light Intensity (Green) mode compare the detected light intensity to the Threshold Value using the selected Compare Type. The True/False result is output in Compare Result, and the detected light intensity is output in Measured Value.]]></Description>
-        </Block>
-		<Block Mode="CompareNXTBlue" DisplayName="Reflected Light Intensity (Blue)">
-          <Description><![CDATA[The Compare – NXT Color - Reflected Light Intensity (Blue) mode compare the detected light intensity to the Threshold Value using the selected Compare Type. The True/False result is output in Compare Result, and the detected light intensity is output in Measured Value.]]></Description>
-        </Block>
-		<Block Mode="CompareNXTAmbient" DisplayName="Ambient Light Intensity">
-          <Description><![CDATA[The Compare – NXT Color - Ambient Light Intensity mode compare the detected light intensity to the Threshold Value using the selected Compare Type. The True/False result is output in Compare Result, and the detected light intensity is output in Measured Value.]]></Description>
-        </Block>
-	  </Category>
-	  <Category Name="Cmp-NXTColorRAW" DisplayName="NXT Color (Raw)">
-		<Block Mode="CompareNXTRedRAW" DisplayName="Reflected Light Intensity (Red)">
-          <Description><![CDATA[The Compare – NXT Color (Raw) - Reflected Light Intensity (Red) mode compare the detected light intensity to the Threshold Value using the selected Compare Type. The True/False result is output in Compare Result, and the detected light intensity is output in Measured Value.]]></Description>
-        </Block>
-		<Block Mode="CompareNXTGreenRAW" DisplayName="Reflected Light Intensity (Green)">
-          <Description><![CDATA[The Compare – NXT Color (Raw) - Reflected Light Intensity (Green) mode compare the detected light intensity to the Threshold Value using the selected Compare Type. The True/False result is output in Compare Result, and the detected light intensity is output in Measured Value.]]></Description>
-        </Block>
-		<Block Mode="CompareNXTBlueRAW" DisplayName="Reflected Light Intensity (Blue)">
-          <Description><![CDATA[The Compare – NXT Color (Raw) - Reflected Light Intensity (Blue) mode compare the detected light intensity to the Threshold Value using the selected Compare Type. The True/False result is output in Compare Result, and the detected light intensity is output in Measured Value.]]></Description>
-        </Block>
-		<Block Mode="CompareNXTAmbientRAW" DisplayName="Ambient Light Intensity">
-          <Description><![CDATA[The Compare – NXT Color (Raw) - Ambient Light Intensity mode compare the detected light intensity to the Threshold Value using the selected Compare Type. The True/False result is output in Compare Result, and the detected light intensity is output in Measured Value.]]></Description>
-        </Block>
-	  </Category>
-	  <Category Name="Chg-NXTColor" DisplayName="NXT Color">
-        <Block Mode="ChangeNXTColor" DisplayName="NXT Color" >
-          <Description><![CDATA[The Color Sensor – Change – Color mode waits for the color number detected by the Color Sensor in Color mode (1-6) to change. The ending color detected is output in Color. See Using the Color Sensor for more information about using the Color Sensor in Color mode.]]></Description>
-        </Block>
-		<Block Mode="ChangeNXTRed" DisplayName="Reflected Light Intensity (Red)" >
-          <Description>><![CDATA[Each of the sensor types listed in the Wait block has one or more Change modes. A Change mode will continuously read data from the sensor and wait for it to change to a different value, or change by an amount that you specify. You can wait for some types of sensor data to change by a certain Amount, and other types to change to a different value.]]></Description>
-        </Block>
-		<Block Mode="ChangeNXTGreen" DisplayName="Reflected Light Intensity (Green)" >
-          <Description>><![CDATA[Each of the sensor types listed in the Wait block has one or more Change modes. A Change mode will continuously read data from the sensor and wait for it to change to a different value, or change by an amount that you specify. You can wait for some types of sensor data to change by a certain Amount, and other types to change to a different value.]]></Description>
-        </Block>
-		<Block Mode="ChangeNXTBlue" DisplayName="Reflected Light Intensity (Blue)" >
-          <Description>><![CDATA[Each of the sensor types listed in the Wait block has one or more Change modes. A Change mode will continuously read data from the sensor and wait for it to change to a different value, or change by an amount that you specify. You can wait for some types of sensor data to change by a certain Amount, and other types to change to a different value.]]></Description>
-        </Block>
-		<Block Mode="ChangeNXTAmbient" DisplayName="Ambient Light Intensity" >
-          <Description>><![CDATA[Each of the sensor types listed in the Wait block has one or more Change modes. A Change mode will continuously read data from the sensor and wait for it to change to a different value, or change by an amount that you specify. You can wait for some types of sensor data to change by a certain Amount, and other types to change to a different value.]]></Description>
-        </Block>
-	  </Category>
-	  <Category Name="Chg-NXTColorRAW" DisplayName="NXT Color (Raw)">
-		<Block Mode="ChangeNXTRedRAW" DisplayName="Reflected Light Intensity (Red)" >
-          <Description>><![CDATA[Each of the sensor types listed in the Wait block has one or more Change modes. A Change mode will continuously read data from the sensor and wait for it to change to a different value, or change by an amount that you specify. You can wait for some types of sensor data to change by a certain Amount, and other types to change to a different value.]]></Description>
-        </Block>
-		<Block Mode="ChangeNXTGreenRAW" DisplayName="Reflected Light Intensity (Green)" >
-          <Description>><![CDATA[Each of the sensor types listed in the Wait block has one or more Change modes. A Change mode will continuously read data from the sensor and wait for it to change to a different value, or change by an amount that you specify. You can wait for some types of sensor data to change by a certain Amount, and other types to change to a different value.]]></Description>
-        </Block>
-		<Block Mode="ChangeNXTBlueRAW" DisplayName="Reflected Light Intensity (Blue)" >
-          <Description>><![CDATA[Each of the sensor types listed in the Wait block has one or more Change modes. A Change mode will continuously read data from the sensor and wait for it to change to a different value, or change by an amount that you specify. You can wait for some types of sensor data to change by a certain Amount, and other types to change to a different value.]]></Description>
-        </Block>
-		<Block Mode="ChangeNXTAmbientRAW" DisplayName="Ambient Light Intensity" >
-          <Description>><![CDATA[Each of the sensor types listed in the Wait block has one or more Change modes. A Change mode will continuously read data from the sensor and wait for it to change to a different value, or change by an amount that you specify. You can wait for some types of sensor data to change by a certain Amount, and other types to change to a different value.]]></Description>
-        </Block>
-	  </Category>
-		<Block Mode="WaitNXTColorCompareNXTColor" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FWait.html#Mode_WaitColorSensorCompareColor">
-          <Description><![CDATA[You can wait for the Color Sensor to detect one or more specified colors. For example, you could wait for the Color Sensor to detect black. See Using the Color Sensor for more information about the Color Sensor in Color mode.Select one or more colors in the Set of Colors input. The block will wait until any one of the selected colors is detected. The detected color is output in Measured Value.]]></Description>
-		</Block>
-		<Block Mode="WaitNXTColorCompareNXTRed" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FWait.html#Mode_WaitColorSensorCompareColor">
-          <Description><![CDATA[<p><b>Mode:</b> NXT Color Sensor – Compare – NXT Color - Reflected Light Intensity (Red)<br/><b>Use:</b> Wait for the reflected light intensity to reach a certain value.</p>]]></Description>
-		</Block>
-		<Block Mode="WaitNXTColorCompareNXTGreen" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FWait.html#Mode_WaitColorSensorCompareColor">
-          <Description><![CDATA[<p><b>Mode:</b> NXT Color Sensor – Compare – NXT Color - Reflected Light Intensity (Green)<br/><b>Use:</b> Wait for the reflected light intensity to reach a certain value.</p>]]></Description>
-		</Block>
-		<Block Mode="WaitNXTColorCompareNXTBlue" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FWait.html#Mode_WaitColorSensorCompareColor">
-          <Description><![CDATA[<p><b>Mode:</b> NXT Color Sensor – Compare – NXT Color - Reflected Light Intensity (Blue)<br/><b>Use:</b> Wait for the reflected light intensity to reach a certain value.</p>]]></Description>
-		</Block>
-		<Block Mode="WaitNXTColorCompareNXTAmbient" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FWait.html#Mode_WaitColorSensorCompareColor">
-          <Description><![CDATA[<p><b>Mode:</b> NXT Color Sensor – Compare – NXT Color - Ambient Light Intensity<br/><b>Use:</b> Wait for the ambient light intensity to reach a certain value.</p>]]></Description>
-		</Block>
-		<Block Mode="WaitNXTColorCompareNXTRedRAW" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FWait.html#Mode_WaitColorSensorCompareColor">
-          <Description><![CDATA[<p><b>Mode:</b> NXT Color Sensor – Compare – NXT Color (Raw) - Reflected Light Intensity (Red)<br/><b>Use:</b> Wait for the reflected light intensity to reach a certain value.</p>]]></Description>
-		</Block>
-		<Block Mode="WaitNXTColorCompareNXTGreenRAW" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FWait.html#Mode_WaitColorSensorCompareColor">
-          <Description><![CDATA[<p><b>Mode:</b> NXT Color Sensor – Compare – NXT Color (Raw) - Reflected Light Intensity (Green)<br/><b>Use:</b> Wait for the reflected light intensity to reach a certain value.</p>]]></Description>
-		</Block>
-		<Block Mode="WaitNXTColorCompareNXTBlueRAW" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FWait.html#Mode_WaitColorSensorCompareColor">
-          <Description><![CDATA[<p><b>Mode:</b> NXT Color Sensor – Compare – NXT Color (Raw) - Reflected Light Intensity (Blue)<br/><b>Use:</b> Wait for the reflected light intensity to reach a certain value.</p>]]></Description>
-		</Block>
-		<Block Mode="WaitNXTColorCompareNXTAmbientRAW" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FWait.html#Mode_WaitColorSensorCompareColor">
-          <Description><![CDATA[<p><b>Mode:</b> NXT Color Sensor – Compare – NXT Color (Raw) - Ambient Light Intensity<br/><b>Use:</b> Wait for the ambient light intensity to reach a certain value.</p>]]></Description>
-		</Block>
-		<Block Mode="WaitNXTColorChangeNXTColor" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FWait.html#Mode_WaitColorSensorChangeColor">
-          <Description><![CDATA[The NXT Color Sensor – Change – Color mode waits for the color number detected by the Color Sensor in Color mode (1-6) to change. The ending color detected is output in Color. See Using the Color Sensor for more information about using the Color Sensor in Color mode.]]></Description>
-		</Block>
-		<Block Mode="WaitNXTColorChangeNXTRed" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FWait.html#Mode_WaitColorSensorChangeReflectedLight">
-          <Description><![CDATA[Each of the sensor types listed in the Wait block has one or more Change modes. A Change mode will continuously read data from the sensor and wait for it to change to a different value, or change by an amount that you specify. You can wait for some types of sensor data to change by a certain Amount, and other types to change to a different value.]]></Description>
-		</Block>
-		<Block Mode="WaitNXTColorChangeNXTGreen" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FWait.html#Mode_WaitColorSensorChangeReflectedLight">
-          <Description><![CDATA[Each of the sensor types listed in the Wait block has one or more Change modes. A Change mode will continuously read data from the sensor and wait for it to change to a different value, or change by an amount that you specify. You can wait for some types of sensor data to change by a certain Amount, and other types to change to a different value.]]></Description>
-		</Block>
-		<Block Mode="WaitNXTColorChangeNXTBlue" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FWait.html#Mode_WaitColorSensorChangeReflectedLight">
-          <Description><![CDATA[Each of the sensor types listed in the Wait block has one or more Change modes. A Change mode will continuously read data from the sensor and wait for it to change to a different value, or change by an amount that you specify. You can wait for some types of sensor data to change by a certain Amount, and other types to change to a different value.]]></Description>
-		</Block>
-		<Block Mode="WaitNXTColorChangeNXTAmbient" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FWait.html#Mode_WaitColorSensorChangeReflectedLight">
-          <Description><![CDATA[Each of the sensor types listed in the Wait block has one or more Change modes. A Change mode will continuously read data from the sensor and wait for it to change to a different value, or change by an amount that you specify. You can wait for some types of sensor data to change by a certain Amount, and other types to change to a different value.]]></Description>
-		</Block>
-		<Block Mode="WaitNXTColorChangeNXTRedRAW" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FWait.html#Mode_WaitColorSensorChangeReflectedLight">
-          <Description><![CDATA[Each of the sensor types listed in the Wait block has one or more Change modes. A Change mode will continuously read data from the sensor and wait for it to change to a different value, or change by an amount that you specify. You can wait for some types of sensor data to change by a certain Amount, and other types to change to a different value.]]></Description>
-		</Block>
-		<Block Mode="WaitNXTColorChangeNXTGreenRAW" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FWait.html#Mode_WaitColorSensorChangeReflectedLight">
-          <Description><![CDATA[Each of the sensor types listed in the Wait block has one or more Change modes. A Change mode will continuously read data from the sensor and wait for it to change to a different value, or change by an amount that you specify. You can wait for some types of sensor data to change by a certain Amount, and other types to change to a different value.]]></Description>
-		</Block>
-		<Block Mode="WaitNXTColorChangeNXTBlueRAW" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FWait.html#Mode_WaitColorSensorChangeReflectedLight">
-          <Description><![CDATA[Each of the sensor types listed in the Wait block has one or more Change modes. A Change mode will continuously read data from the sensor and wait for it to change to a different value, or change by an amount that you specify. You can wait for some types of sensor data to change by a certain Amount, and other types to change to a different value.]]></Description>
-		</Block>
-		<Block Mode="WaitNXTColorChangeNXTAmbientRAW" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FWait.html#Mode_WaitColorSensorChangeReflectedLight">
-          <Description><![CDATA[Each of the sensor types listed in the Wait block has one or more Change modes. A Change mode will continuously read data from the sensor and wait for it to change to a different value, or change by an amount that you specify. You can wait for some types of sensor data to change by a certain Amount, and other types to change to a different value.]]></Description>
-		</Block>
-		<Block Mode="LoopNXTColorCompareNXTColor" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FLoopCondition.html#Mode_LoopColorSensorCompareColor">
-          <Description><![CDATA[<p><b>Notes:</b> Loop repeats until one of the selected colors is detected. <br/><br/>See Using the Color Sensor.</p>]]></Description>
-		</Block>
-		<Block Mode="LoopNXTColorCompareNXTRed" DisplayName="" Link="page.html?Path=editor%2FUsingSensors_Color.html#Mode_LoopColorSensorCompareReflectedLight">
-          <Description><![CDATA[<p><b>Mode:</b> NXT Color – Reflected Light Intensity (Red)<br/><b>Use:</b> Repeat a sequence of blocks until the reflected light intensity reaches a certain value.</p>]]></Description>
-		</Block>
-		<Block Mode="LoopNXTColorCompareNXTGreen" DisplayName="" Link="page.html?Path=editor%2FUsingSensors_Color.html#Mode_LoopColorSensorCompareReflectedLight">
-          <Description><![CDATA[<p><b>Mode:</b> NXT Color – Reflected Light Intensity (Green)<br/><b>Use:</b> Repeat a sequence of blocks until the reflected light intensity reaches a certain value.</p>]]></Description>
-		</Block>
-		<Block Mode="LoopNXTColorCompareNXTBlue" DisplayName="" Link="page.html?Path=editor%2FUsingSensors_Color.html#Mode_LoopColorSensorCompareReflectedLight">
-          <Description><![CDATA[<p><b>Mode:</b> NXT Color – Reflected Light Intensity (Blue)<br/><b>Use:</b> Repeat a sequence of blocks until the reflected light intensity reaches a certain value.</p>]]></Description>
-		</Block>
-		<Block Mode="LoopNXTColorCompareNXTAmbient" DisplayName="" Link="page.html?Path=editor%2FUsingSensors_Color.html#Mode_LoopColorSensorCompareReflectedLight">
-          <Description><![CDATA[<p><b>Mode:</b> NXT Color – Ambient Light Intensity<br/><b>Use:</b> Repeat a sequence of blocks until the ambient light intensity reaches a certain value.</p>]]></Description>
-		</Block>
-		<Block Mode="LoopNXTColorCompareNXTRedRAW" DisplayName="" Link="page.html?Path=editor%2FUsingSensors_Color.html#Mode_LoopColorSensorCompareReflectedLight">
-          <Description><![CDATA[<p><b>Mode:</b> NXT Color (Raw) – Reflected Light Intensity (Red)<br/><b>Use:</b> Repeat a sequence of blocks until the reflected light intensity reaches a certain value.</p>]]></Description>
-		</Block>
-		<Block Mode="LoopNXTColorCompareNXTGreenRAW" DisplayName="" Link="page.html?Path=editor%2FUsingSensors_Color.html#Mode_LoopColorSensorCompareReflectedLight">
-          <Description><![CDATA[<p><b>Mode:</b> NXT Color (Raw) – Reflected Light Intensity (Green)<br/><b>Use:</b> Repeat a sequence of blocks until the reflected light intensity reaches a certain value.</p>]]></Description>
-		</Block>
-		<Block Mode="LoopNXTColorCompareNXTBlueRAW" DisplayName="" Link="page.html?Path=editor%2FUsingSensors_Color.html#Mode_LoopColorSensorCompareReflectedLight">
-          <Description><![CDATA[<p><b>Mode:</b> NXT Color (Raw) – Reflected Light Intensity (Blue)<br/><b>Use:</b> Repeat a sequence of blocks until the reflected light intensity reaches a certain value.</p>]]></Description>
-		</Block>
-		<Block Mode="LoopNXTColorCompareNXTAmbientRAW" DisplayName="" Link="page.html?Path=editor%2FUsingSensors_Color.html#Mode_LoopColorSensorCompareReflectedLight">
-          <Description><![CDATA[<p><b>Mode:</b> NXT Color (Raw) – Ambient Light Intensity<br/><b>Use:</b> Repeat a sequence of blocks until the ambient light intensity reaches a certain value.</p>]]></Description>
-		</Block>
-		<Block Mode="SwitchNXTColorMeasureNXTColor" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FCaseSelector.html#Mode_SwitchColorSensorMeasureColor">
-          <Description><![CDATA[<p><b>Use:</b> Choose between two or more Cases depending on which color is detected.<br/><b>See:</b> Using the Color Sensor</p>]]></Description>
-		</Block>
-		<Block Mode="SwitchNXTColorCompareNXTColor" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FCaseSelector.html#Mode_SwitchColorSensorCompareColor">
-          <Description><![CDATA[<p><b>Use:</b> Choose between two Cases depending on whether or not one of the selected colors is detected<br/><b>See:</b> Using the Color Sensor</p>]]></Description>
-		</Block>
-		<Block Mode="SwitchNXTColorCompareNXTRed" DisplayName="" Link="page.html?Path=editor%2FUsingSensors_Color.html#Mode_SwitchColorSensorCompareReflectedLight">
-		  <Description><![CDATA[<p><b>Mode:</b> NXT Color Sensor – Compare - NXT Color – Reflected Light Intensity (Red)<br/><b>Use:</b> Choose between two sequences of blocks depending on the reflected light intensity.</p>]]></Description>
-		</Block>
-		<Block Mode="SwitchNXTColorCompareNXTGreen" DisplayName="" Link="page.html?Path=editor%2FUsingSensors_Color.html#Mode_SwitchColorSensorCompareReflectedLight">
-		  <Description><![CDATA[<p><b>Mode:</b> NXT Color Sensor – Compare - NXT Color – Reflected Light Intensity (Green)<br/><b>Use:</b> Choose between two sequences of blocks depending on the reflected light intensity.</p>]]></Description>
-		</Block>
-		<Block Mode="SwitchNXTColorCompareNXTBlue" DisplayName="" Link="page.html?Path=editor%2FUsingSensors_Color.html#Mode_SwitchColorSensorCompareReflectedLight">
-		  <Description><![CDATA[<p><b>Mode:</b> NXT Color Sensor – Compare - NXT Color – Reflected Light Intensity (Blue)<br/><b>Use:</b> Choose between two sequences of blocks depending on the reflected light intensity.</p>]]></Description>
-		</Block>
-		<Block Mode="SwitchNXTColorCompareNXTAmbient" DisplayName="" Link="page.html?Path=editor%2FUsingSensors_Color.html#Mode_SwitchColorSensorCompareReflectedLight">
-		  <Description><![CDATA[<p><b>Mode:</b> NXT Color Sensor – Compare - NXT Color – Ambient Light Intensity<br/><b>Use:</b> Choose between two sequences of blocks depending on the reflected light intensity.</p>]]></Description>
-		</Block>
-		<Block Mode="SwitchNXTColorCompareNXTRedRAW" DisplayName="" Link="page.html?Path=editor%2FUsingSensors_Color.html#Mode_SwitchColorSensorCompareReflectedLight">
-		  <Description><![CDATA[<p><b>Mode:</b> NXT Color Sensor – Compare - NXT Color (Raw) – Reflected Light Intensity (Red)<br/><b>Use:</b> Choose between two sequences of blocks depending on the reflected light intensity.</p>]]></Description>
-		</Block>
-		<Block Mode="SwitchNXTColorCompareNXTGreenRAW" DisplayName="" Link="page.html?Path=editor%2FUsingSensors_Color.html#Mode_SwitchColorSensorCompareReflectedLight">
-		  <Description><![CDATA[<p><b>Mode:</b> NXT Color Sensor – Compare - NXT Color (Green) – Reflected Light Intensity (Red)<br/><b>Use:</b> Choose between two sequences of blocks depending on the reflected light intensity.</p>]]></Description>
-		</Block>
-		<Block Mode="SwitchNXTColorCompareNXTBlueRAW" DisplayName="" Link="page.html?Path=editor%2FUsingSensors_Color.html#Mode_SwitchColorSensorCompareReflectedLight">
-		  <Description><![CDATA[<p><b>Mode:</b> NXT Color Sensor – Compare - NXT Color (Blue) – Reflected Light Intensity (Red)<br/><b>Use:</b> Choose between two sequences of blocks depending on the reflected light intensity.</p>]]></Description>
-		</Block>
-		<Block Mode="SwitchNXTColorCompareNXTAmbientRAW" DisplayName="" Link="page.html?Path=editor%2FUsingSensors_Color.html#Mode_SwitchColorSensorCompareReflectedLight">
-		  <Description><![CDATA[<p><b>Mode:</b> NXT Color Sensor – Compare - NXT Color (Raw) – Ambient Light Intensity<br/><b>Use:</b> Choose between two sequences of blocks depending on the ambient light intensity.</p>]]></Description>
-		</Block>
-    </PolyGroup>
-  </PolyGroups>
+	<PolyGroups ModuleName="NXTColor">
+		<PolyGroup Name="NXTColor" DisplayName="NXT Color Sensor - OFDL Dev." DisplayNamePrefix="NXTColor">
+			<Description>
+				<![CDATA[<p>Context help for PolyGroup <b>NXT Color Sensor</b></p>]]>
+			</Description>
+			<Parameter Name="Direction" DisplayName="Direction" >
+				<Description>
+					<![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> Direction for a Numeric sensor value to change.<br/>Used in Sensor Change Modes that have an Amount input.<br/>0 = Increase<br/>1 = Decrease<br/>2 = Any</p>]]>
+				</Description>
+			</Parameter>
+			<Parameter Name="Port" DisplayName="Port" >
+				<Description>
+					<![CDATA[Many programming blocks require that you select the ports on the EV3 Brick (A, B, C, D, 1, 2, 3, and 4) that these blocks will use. The Port Selectors are in the top right-hand corner of these blocks.]]>
+				</Description>
+			</Parameter>
+			<Parameter Name="Comparison" DisplayName="Compare Type">
+				<Description>
+					<![CDATA[<p><b>Type:</b> Numeric<br/><b>Allowed Values:</b> 0 - 5<br/><b>Notes:</b> 0:  = (Equal to)<br/>1:  ≠ (Not Equal to)<br/>2:  &gt; (Greater than)<br/>3:  ≥ (Greater than or Equal to)<br/>4:  &lt; (Less than)<br/>5:  ≤ (Less than or Equal to)</p>]]>
+				</Description>
+			</Parameter>
+			<Parameter Name="Threshold" DisplayName="Threshold Value">
+				<Description>
+					<![CDATA[<p><b>Type:</b> Numeric<br/><b>Allowed Values:</b> Any number<br/><b>Notes:</b> Value to compare sensor data to</p>]]>
+				</Description>
+			</Parameter>
+			<Parameter Name="Amount" DisplayName="Amount" >
+				<Description>
+					<![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> Amount for sensor value to change in a Sensor Change Mode</p>]]>
+				</Description>
+			</Parameter>
+			<Parameter Name="Color" DisplayName="Color">
+				<Description>
+					<![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> Detected color number: <br/>1 = Black <br/>2 = Blue <br/>3 = Green <br/>4 = Yellow <br/>5 = Red <br/>6 = White </p>]]>
+				</Description>
+			</Parameter>
+			<Parameter Name="Value" DisplayName="Light">
+				<Description>
+					<![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> The sensor data value used for a Compare mode.</p>]]>
+				</Description>
+			</Parameter>
+			<Parameter Name="RawValue" DisplayName="Light (Raw)">
+				<Description>
+					<![CDATA[<p><b>Type:</b> Numeric<br/><b>Notes:</b> The sensor data raw value used for a Compare mode.</p>]]]>
+				</Description>
+			</Parameter>
+			<Parameter Name="Result" DisplayName="Compare Result">
+				<Description>
+					<![CDATA[<p><b>Type:</b> Logic<br/><b>Notes:</b> True/False result of a Compare mode.</p>]]>
+				</Description>
+			</Parameter>
+			<Parameter Name="Min" DisplayName="Minimum Raw Value Set">
+				<Description><![CDATA[<p>Minimum Raw value Set</p>]]></Description>
+			</Parameter>
+			<Parameter Name="Max" DisplayName="Maximum Raw Value Set">
+				<Description><![CDATA[<p>Minimum Raw value Set</p>]]></Description>
+			</Parameter>
+			<Parameter Name="Set of colors" DisplayName="Set of Colors">
+				<Description>
+					<![CDATA[<p><b>Type:</b> Numeric Array<br/><b>Allowed Values:</b> Each element: 1 – 6<br/><b>Notes:</b> Selected color(s) to test for in Compare – Color mode:<br/>1 = Black <br/>2 = Blue <br/>3 = Green <br/>4 = Yellow <br/>5 = Red <br/>6 = White </p>]]>
+				</Description>
+			</Parameter>
+			<Category Name="Msr-NXTColor" DisplayName="NXT Color">
+				<Block Mode="MeasureNXTColor" DisplayName="Color">
+					<Description>
+						<![CDATA[The Measure – NXT Color - Color mode outputs the detected color number in Color.]]>
+					</Description>
+				</Block>
+				<Block Mode="MeasureNXTRed" DisplayName="Reflected Light Intensity (Red)">
+					<Description>
+						<![CDATA[The Measure – NXT Color - Reflected Light Intensity (Red) mode outputs the light intensity in Measured Value.]]>
+					</Description>
+				</Block>
+				<Block Mode="MeasureNXTGreen" DisplayName="Reflected Light Intensity (Green)">
+					<Description>
+						<![CDATA[The Measure - NXT Color – Reflected Light Intensity (Green) mode outputs the light intensity in Measured Value.]]>
+					</Description>
+				</Block>
+				<Block Mode="MeasureNXTBlue" DisplayName="Reflected Light Intensity (Blue)">
+					<Description>
+						<![CDATA[The Measure – NXT Color - Reflected Light Intensity mode (Blue) outputs the light intensity in Measured Value.]]>
+					</Description>
+				</Block>
+				<Block Mode="MeasureNXTAmbient" DisplayName="Ambient Light Intensity">
+					<Description>
+						<![CDATA[The Measure – NXT Color - Ambient Light Intensity mode outputs the light intensity in Measured Value.]]>
+					</Description>
+				</Block>
+			</Category>
+			<Category Name="Msr-NXTColorRAW" DisplayName="NXT Color (Raw)">
+				<Block Mode="MeasureNXTRedRAW" DisplayName="Reflected Light Intensity (Red)">
+					<Description>
+						<![CDATA[The Measure – NXT Color (Raw) - Reflected Light Intensity (Red) mode outputs the light intensity in Measured Value.]]>
+					</Description>
+				</Block>
+				<Block Mode="MeasureNXTGreenRAW" DisplayName="Reflected Light Intensity (Green)">
+					<Description>
+						<![CDATA[The Measure – NXT Color (Raw) - Reflected Light Intensity (Green) mode outputs the light intensity in Measured Value.]]>
+					</Description>
+				</Block>
+				<Block Mode="MeasureNXTBlueRAW" DisplayName="Reflected Light Intensity (Blue)">
+					<Description>
+						<![CDATA[The Measure – NXT Color (Raw) - Reflected Light Intensity (Blue) mode outputs the light intensity in Measured Value.]]>
+					</Description>
+				</Block>
+				<Block Mode="MeasureNXTAmbientRAW" DisplayName="Ambient Light Intensity">
+					<Description>
+						<![CDATA[The Measure – NXT Color (Raw) - Ambient Light Intensity mode outputs the light intensity in Measured Value.]]>
+					</Description>
+				</Block>
+			</Category>
+			<Category Name="Cmp-NXTColor" DisplayName="NXT Color">
+				<Block Mode="CompareNXTColor" DisplayName="Color">
+					<Description>
+						<![CDATA[In the Compare – NXT Color - Color mode, you can select one or more colors in the Set of Colors. The Compare Result output will be True if the detected color matches any of the selected colors. The detected color is output to Measured Value.]]>
+					</Description>
+				</Block>
+				<Block Mode="CompareNXTRed" DisplayName="Reflected Light Intensity (Red)">
+					<Description>
+						<![CDATA[The Compare – NXT Color - Reflected Light Intensity (Red) mode compare the detected light intensity to the Threshold Value using the selected Compare Type. The True/False result is output in Compare Result, and the detected light intensity is output in Measured Value.]]>
+					</Description>
+				</Block>
+				<Block Mode="CompareNXTGreen" DisplayName="Reflected Light Intensity (Green)">
+					<Description>
+						<![CDATA[The Compare – NXT Color - Reflected Light Intensity (Green) mode compare the detected light intensity to the Threshold Value using the selected Compare Type. The True/False result is output in Compare Result, and the detected light intensity is output in Measured Value.]]>
+					</Description>
+				</Block>
+				<Block Mode="CompareNXTBlue" DisplayName="Reflected Light Intensity (Blue)">
+					<Description>
+						<![CDATA[The Compare – NXT Color - Reflected Light Intensity (Blue) mode compare the detected light intensity to the Threshold Value using the selected Compare Type. The True/False result is output in Compare Result, and the detected light intensity is output in Measured Value.]]>
+					</Description>
+				</Block>
+				<Block Mode="CompareNXTAmbient" DisplayName="Ambient Light Intensity">
+					<Description>
+						<![CDATA[The Compare – NXT Color - Ambient Light Intensity mode compare the detected light intensity to the Threshold Value using the selected Compare Type. The True/False result is output in Compare Result, and the detected light intensity is output in Measured Value.]]>
+					</Description>
+				</Block>
+			</Category>
+			<Category Name="Cmp-NXTColorRAW" DisplayName="NXT Color (Raw)">
+				<Block Mode="CompareNXTRedRAW" DisplayName="Reflected Light Intensity (Red)">
+					<Description>
+						<![CDATA[The Compare – NXT Color (Raw) - Reflected Light Intensity (Red) mode compare the detected light intensity to the Threshold Value using the selected Compare Type. The True/False result is output in Compare Result, and the detected light intensity is output in Measured Value.]]>
+					</Description>
+				</Block>
+				<Block Mode="CompareNXTGreenRAW" DisplayName="Reflected Light Intensity (Green)">
+					<Description>
+						<![CDATA[The Compare – NXT Color (Raw) - Reflected Light Intensity (Green) mode compare the detected light intensity to the Threshold Value using the selected Compare Type. The True/False result is output in Compare Result, and the detected light intensity is output in Measured Value.]]>
+					</Description>
+				</Block>
+				<Block Mode="CompareNXTBlueRAW" DisplayName="Reflected Light Intensity (Blue)">
+					<Description>
+						<![CDATA[The Compare – NXT Color (Raw) - Reflected Light Intensity (Blue) mode compare the detected light intensity to the Threshold Value using the selected Compare Type. The True/False result is output in Compare Result, and the detected light intensity is output in Measured Value.]]>
+					</Description>
+				</Block>
+				<Block Mode="CompareNXTAmbientRAW" DisplayName="Ambient Light Intensity">
+					<Description>
+						<![CDATA[The Compare – NXT Color (Raw) - Ambient Light Intensity mode compare the detected light intensity to the Threshold Value using the selected Compare Type. The True/False result is output in Compare Result, and the detected light intensity is output in Measured Value.]]>
+					</Description>
+				</Block>
+			</Category>
+			<Category Name="Chg-NXTColor" DisplayName="NXT Color">
+				<Block Mode="ChangeNXTColor" DisplayName="NXT Color" >
+					<Description>
+						<![CDATA[The Color Sensor – Change – Color mode waits for the color number detected by the Color Sensor in Color mode (1-6) to change. The ending color detected is output in Color. See Using the Color Sensor for more information about using the Color Sensor in Color mode.]]>
+					</Description>
+				</Block>
+				<Block Mode="ChangeNXTRed" DisplayName="Reflected Light Intensity (Red)" >
+					<Description>
+						<![CDATA[Each of the sensor types listed in the Wait block has one or more Change modes. A Change mode will continuously read data from the sensor and wait for it to change to a different value, or change by an amount that you specify. You can wait for some types of sensor data to change by a certain Amount, and other types to change to a different value.]]>
+					</Description>
+				</Block>
+				<Block Mode="ChangeNXTGreen" DisplayName="Reflected Light Intensity (Green)" >
+					<Description>
+						<![CDATA[Each of the sensor types listed in the Wait block has one or more Change modes. A Change mode will continuously read data from the sensor and wait for it to change to a different value, or change by an amount that you specify. You can wait for some types of sensor data to change by a certain Amount, and other types to change to a different value.]]>
+					</Description>
+				</Block>
+				<Block Mode="ChangeNXTBlue" DisplayName="Reflected Light Intensity (Blue)" >
+					<Description>
+						<![CDATA[Each of the sensor types listed in the Wait block has one or more Change modes. A Change mode will continuously read data from the sensor and wait for it to change to a different value, or change by an amount that you specify. You can wait for some types of sensor data to change by a certain Amount, and other types to change to a different value.]]>
+					</Description>
+				</Block>
+				<Block Mode="ChangeNXTAmbient" DisplayName="Ambient Light Intensity" >
+					<Description>
+						<![CDATA[Each of the sensor types listed in the Wait block has one or more Change modes. A Change mode will continuously read data from the sensor and wait for it to change to a different value, or change by an amount that you specify. You can wait for some types of sensor data to change by a certain Amount, and other types to change to a different value.]]>
+					</Description>
+				</Block>
+			</Category>
+			<Category Name="Chg-NXTColorRAW" DisplayName="NXT Color (Raw)">
+				<Block Mode="ChangeNXTRedRAW" DisplayName="Reflected Light Intensity (Red)" >
+					<Description>
+						<![CDATA[Each of the sensor types listed in the Wait block has one or more Change modes. A Change mode will continuously read data from the sensor and wait for it to change to a different value, or change by an amount that you specify. You can wait for some types of sensor data to change by a certain Amount, and other types to change to a different value.]]>
+					</Description>
+				</Block>
+				<Block Mode="ChangeNXTGreenRAW" DisplayName="Reflected Light Intensity (Green)" >
+					<Description>
+						<![CDATA[Each of the sensor types listed in the Wait block has one or more Change modes. A Change mode will continuously read data from the sensor and wait for it to change to a different value, or change by an amount that you specify. You can wait for some types of sensor data to change by a certain Amount, and other types to change to a different value.]]>
+					</Description>
+				</Block>
+				<Block Mode="ChangeNXTBlueRAW" DisplayName="Reflected Light Intensity (Blue)" >
+					<Description>
+						<![CDATA[Each of the sensor types listed in the Wait block has one or more Change modes. A Change mode will continuously read data from the sensor and wait for it to change to a different value, or change by an amount that you specify. You can wait for some types of sensor data to change by a certain Amount, and other types to change to a different value.]]>
+					</Description>
+				</Block>
+				<Block Mode="ChangeNXTAmbientRAW" DisplayName="Ambient Light Intensity" >
+					<Description>
+						<![CDATA[Each of the sensor types listed in the Wait block has one or more Change modes. A Change mode will continuously read data from the sensor and wait for it to change to a different value, or change by an amount that you specify. You can wait for some types of sensor data to change by a certain Amount, and other types to change to a different value.]]>
+					</Description>
+				</Block>
+			</Category>
+			<Block Mode="WaitNXTColorCompareNXTColor" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FWait.html#Mode_WaitColorSensorCompareColor">
+				<Description>
+					<![CDATA[You can wait for the Color Sensor to detect one or more specified colors. For example, you could wait for the Color Sensor to detect black. See Using the Color Sensor for more information about the Color Sensor in Color mode.Select one or more colors in the Set of Colors input. The block will wait until any one of the selected colors is detected. The detected color is output in Measured Value.]]>
+				</Description>
+			</Block>
+			<Block Mode="WaitNXTColorCompareNXTRed" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FWait.html#Mode_WaitColorSensorCompareColor">
+				<Description>
+					<![CDATA[<p><b>Mode:</b> NXT Color Sensor – Compare – NXT Color - Reflected Light Intensity (Red)<br/><b>Use:</b> Wait for the reflected light intensity to reach a certain value.</p>]]>
+				</Description>
+			</Block>
+			<Block Mode="WaitNXTColorCompareNXTGreen" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FWait.html#Mode_WaitColorSensorCompareColor">
+				<Description>
+					<![CDATA[<p><b>Mode:</b> NXT Color Sensor – Compare – NXT Color - Reflected Light Intensity (Green)<br/><b>Use:</b> Wait for the reflected light intensity to reach a certain value.</p>]]>
+				</Description>
+			</Block>
+			<Block Mode="WaitNXTColorCompareNXTBlue" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FWait.html#Mode_WaitColorSensorCompareColor">
+				<Description>
+					<![CDATA[<p><b>Mode:</b> NXT Color Sensor – Compare – NXT Color - Reflected Light Intensity (Blue)<br/><b>Use:</b> Wait for the reflected light intensity to reach a certain value.</p>]]>
+				</Description>
+			</Block>
+			<Block Mode="WaitNXTColorCompareNXTAmbient" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FWait.html#Mode_WaitColorSensorCompareColor">
+				<Description>
+					<![CDATA[<p><b>Mode:</b> NXT Color Sensor – Compare – NXT Color - Ambient Light Intensity<br/><b>Use:</b> Wait for the ambient light intensity to reach a certain value.</p>]]>
+				</Description>
+			</Block>
+			<Block Mode="WaitNXTColorCompareNXTRedRAW" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FWait.html#Mode_WaitColorSensorCompareColor">
+				<Description>
+					<![CDATA[<p><b>Mode:</b> NXT Color Sensor – Compare – NXT Color (Raw) - Reflected Light Intensity (Red)<br/><b>Use:</b> Wait for the reflected light intensity to reach a certain value.</p>]]>
+				</Description>
+			</Block>
+			<Block Mode="WaitNXTColorCompareNXTGreenRAW" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FWait.html#Mode_WaitColorSensorCompareColor">
+				<Description>
+					<![CDATA[<p><b>Mode:</b> NXT Color Sensor – Compare – NXT Color (Raw) - Reflected Light Intensity (Green)<br/><b>Use:</b> Wait for the reflected light intensity to reach a certain value.</p>]]>
+				</Description>
+			</Block>
+			<Block Mode="WaitNXTColorCompareNXTBlueRAW" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FWait.html#Mode_WaitColorSensorCompareColor">
+				<Description>
+					<![CDATA[<p><b>Mode:</b> NXT Color Sensor – Compare – NXT Color (Raw) - Reflected Light Intensity (Blue)<br/><b>Use:</b> Wait for the reflected light intensity to reach a certain value.</p>]]>
+				</Description>
+			</Block>
+			<Block Mode="WaitNXTColorCompareNXTAmbientRAW" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FWait.html#Mode_WaitColorSensorCompareColor">
+				<Description>
+					<![CDATA[<p><b>Mode:</b> NXT Color Sensor – Compare – NXT Color (Raw) - Ambient Light Intensity<br/><b>Use:</b> Wait for the ambient light intensity to reach a certain value.</p>]]>
+				</Description>
+			</Block>
+			<Block Mode="WaitNXTColorChangeNXTColor" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FWait.html#Mode_WaitColorSensorChangeColor">
+				<Description>
+					<![CDATA[The NXT Color Sensor – Change – Color mode waits for the color number detected by the Color Sensor in Color mode (1-6) to change. The ending color detected is output in Color. See Using the Color Sensor for more information about using the Color Sensor in Color mode.]]>
+				</Description>
+			</Block>
+			<Block Mode="WaitNXTColorChangeNXTRed" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FWait.html#Mode_WaitColorSensorChangeReflectedLight">
+				<Description>
+					<![CDATA[Each of the sensor types listed in the Wait block has one or more Change modes. A Change mode will continuously read data from the sensor and wait for it to change to a different value, or change by an amount that you specify. You can wait for some types of sensor data to change by a certain Amount, and other types to change to a different value.]]>
+				</Description>
+			</Block>
+			<Block Mode="WaitNXTColorChangeNXTGreen" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FWait.html#Mode_WaitColorSensorChangeReflectedLight">
+				<Description>
+					<![CDATA[Each of the sensor types listed in the Wait block has one or more Change modes. A Change mode will continuously read data from the sensor and wait for it to change to a different value, or change by an amount that you specify. You can wait for some types of sensor data to change by a certain Amount, and other types to change to a different value.]]>
+				</Description>
+			</Block>
+			<Block Mode="WaitNXTColorChangeNXTBlue" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FWait.html#Mode_WaitColorSensorChangeReflectedLight">
+				<Description>
+					<![CDATA[Each of the sensor types listed in the Wait block has one or more Change modes. A Change mode will continuously read data from the sensor and wait for it to change to a different value, or change by an amount that you specify. You can wait for some types of sensor data to change by a certain Amount, and other types to change to a different value.]]>
+				</Description>
+			</Block>
+			<Block Mode="WaitNXTColorChangeNXTAmbient" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FWait.html#Mode_WaitColorSensorChangeReflectedLight">
+				<Description>
+					<![CDATA[Each of the sensor types listed in the Wait block has one or more Change modes. A Change mode will continuously read data from the sensor and wait for it to change to a different value, or change by an amount that you specify. You can wait for some types of sensor data to change by a certain Amount, and other types to change to a different value.]]>
+				</Description>
+			</Block>
+			<Block Mode="WaitNXTColorChangeNXTRedRAW" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FWait.html#Mode_WaitColorSensorChangeReflectedLight">
+				<Description>
+					<![CDATA[Each of the sensor types listed in the Wait block has one or more Change modes. A Change mode will continuously read data from the sensor and wait for it to change to a different value, or change by an amount that you specify. You can wait for some types of sensor data to change by a certain Amount, and other types to change to a different value.]]>
+				</Description>
+			</Block>
+			<Block Mode="WaitNXTColorChangeNXTGreenRAW" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FWait.html#Mode_WaitColorSensorChangeReflectedLight">
+				<Description>
+					<![CDATA[Each of the sensor types listed in the Wait block has one or more Change modes. A Change mode will continuously read data from the sensor and wait for it to change to a different value, or change by an amount that you specify. You can wait for some types of sensor data to change by a certain Amount, and other types to change to a different value.]]>
+				</Description>
+			</Block>
+			<Block Mode="WaitNXTColorChangeNXTBlueRAW" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FWait.html#Mode_WaitColorSensorChangeReflectedLight">
+				<Description>
+					<![CDATA[Each of the sensor types listed in the Wait block has one or more Change modes. A Change mode will continuously read data from the sensor and wait for it to change to a different value, or change by an amount that you specify. You can wait for some types of sensor data to change by a certain Amount, and other types to change to a different value.]]>
+				</Description>
+			</Block>
+			<Block Mode="WaitNXTColorChangeNXTAmbientRAW" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FWait.html#Mode_WaitColorSensorChangeReflectedLight">
+				<Description>
+					<![CDATA[Each of the sensor types listed in the Wait block has one or more Change modes. A Change mode will continuously read data from the sensor and wait for it to change to a different value, or change by an amount that you specify. You can wait for some types of sensor data to change by a certain Amount, and other types to change to a different value.]]>
+				</Description>
+			</Block>
+			<Block Mode="LoopNXTColorCompareNXTColor" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FLoopCondition.html#Mode_LoopColorSensorCompareColor">
+				<Description>
+					<![CDATA[<p><b>Notes:</b> Loop repeats until one of the selected colors is detected. <br/><br/>See Using the Color Sensor.</p>]]>
+				</Description>
+			</Block>
+			<Block Mode="LoopNXTColorCompareNXTRed" DisplayName="" Link="page.html?Path=editor%2FUsingSensors_Color.html#Mode_LoopColorSensorCompareReflectedLight">
+				<Description>
+					<![CDATA[<p><b>Mode:</b> NXT Color – Reflected Light Intensity (Red)<br/><b>Use:</b> Repeat a sequence of blocks until the reflected light intensity reaches a certain value.</p>]]>
+				</Description>
+			</Block>
+			<Block Mode="LoopNXTColorCompareNXTGreen" DisplayName="" Link="page.html?Path=editor%2FUsingSensors_Color.html#Mode_LoopColorSensorCompareReflectedLight">
+				<Description>
+					<![CDATA[<p><b>Mode:</b> NXT Color – Reflected Light Intensity (Green)<br/><b>Use:</b> Repeat a sequence of blocks until the reflected light intensity reaches a certain value.</p>]]>
+				</Description>
+			</Block>
+			<Block Mode="LoopNXTColorCompareNXTBlue" DisplayName="" Link="page.html?Path=editor%2FUsingSensors_Color.html#Mode_LoopColorSensorCompareReflectedLight">
+				<Description>
+					<![CDATA[<p><b>Mode:</b> NXT Color – Reflected Light Intensity (Blue)<br/><b>Use:</b> Repeat a sequence of blocks until the reflected light intensity reaches a certain value.</p>]]>
+				</Description>
+			</Block>
+			<Block Mode="LoopNXTColorCompareNXTAmbient" DisplayName="" Link="page.html?Path=editor%2FUsingSensors_Color.html#Mode_LoopColorSensorCompareReflectedLight">
+				<Description>
+					<![CDATA[<p><b>Mode:</b> NXT Color – Ambient Light Intensity<br/><b>Use:</b> Repeat a sequence of blocks until the ambient light intensity reaches a certain value.</p>]]>
+				</Description>
+			</Block>
+			<Block Mode="LoopNXTColorCompareNXTRedRAW" DisplayName="" Link="page.html?Path=editor%2FUsingSensors_Color.html#Mode_LoopColorSensorCompareReflectedLight">
+				<Description>
+					<![CDATA[<p><b>Mode:</b> NXT Color (Raw) – Reflected Light Intensity (Red)<br/><b>Use:</b> Repeat a sequence of blocks until the reflected light intensity reaches a certain value.</p>]]>
+				</Description>
+			</Block>
+			<Block Mode="LoopNXTColorCompareNXTGreenRAW" DisplayName="" Link="page.html?Path=editor%2FUsingSensors_Color.html#Mode_LoopColorSensorCompareReflectedLight">
+				<Description>
+					<![CDATA[<p><b>Mode:</b> NXT Color (Raw) – Reflected Light Intensity (Green)<br/><b>Use:</b> Repeat a sequence of blocks until the reflected light intensity reaches a certain value.</p>]]>
+				</Description>
+			</Block>
+			<Block Mode="LoopNXTColorCompareNXTBlueRAW" DisplayName="" Link="page.html?Path=editor%2FUsingSensors_Color.html#Mode_LoopColorSensorCompareReflectedLight">
+				<Description>
+					<![CDATA[<p><b>Mode:</b> NXT Color (Raw) – Reflected Light Intensity (Blue)<br/><b>Use:</b> Repeat a sequence of blocks until the reflected light intensity reaches a certain value.</p>]]>
+				</Description>
+			</Block>
+			<Block Mode="LoopNXTColorCompareNXTAmbientRAW" DisplayName="" Link="page.html?Path=editor%2FUsingSensors_Color.html#Mode_LoopColorSensorCompareReflectedLight">
+				<Description>
+					<![CDATA[<p><b>Mode:</b> NXT Color (Raw) – Ambient Light Intensity<br/><b>Use:</b> Repeat a sequence of blocks until the ambient light intensity reaches a certain value.</p>]]>
+				</Description>
+			</Block>
+			<Block Mode="SwitchNXTColorMeasureNXTColor" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FCaseSelector.html#Mode_SwitchColorSensorMeasureColor">
+				<Description>
+					<![CDATA[<p><b>Use:</b> Choose between two or more Cases depending on which color is detected.<br/><b>See:</b> Using the Color Sensor</p>]]>
+				</Description>
+			</Block>
+			<Block Mode="SwitchNXTColorCompareNXTColor" DisplayName="" Link="page.html?Path=blocks%2FLEGO%2FCaseSelector.html#Mode_SwitchColorSensorCompareColor">
+				<Description>
+					<![CDATA[<p><b>Use:</b> Choose between two Cases depending on whether or not one of the selected colors is detected<br/><b>See:</b> Using the Color Sensor</p>]]>
+				</Description>
+			</Block>
+			<Block Mode="SwitchNXTColorCompareNXTRed" DisplayName="" Link="page.html?Path=editor%2FUsingSensors_Color.html#Mode_SwitchColorSensorCompareReflectedLight">
+				<Description>
+					<![CDATA[<p><b>Mode:</b> NXT Color Sensor – Compare - NXT Color – Reflected Light Intensity (Red)<br/><b>Use:</b> Choose between two sequences of blocks depending on the reflected light intensity.</p>]]>
+				</Description>
+			</Block>
+			<Block Mode="SwitchNXTColorCompareNXTGreen" DisplayName="" Link="page.html?Path=editor%2FUsingSensors_Color.html#Mode_SwitchColorSensorCompareReflectedLight">
+				<Description>
+					<![CDATA[<p><b>Mode:</b> NXT Color Sensor – Compare - NXT Color – Reflected Light Intensity (Green)<br/><b>Use:</b> Choose between two sequences of blocks depending on the reflected light intensity.</p>]]>
+				</Description>
+			</Block>
+			<Block Mode="SwitchNXTColorCompareNXTBlue" DisplayName="" Link="page.html?Path=editor%2FUsingSensors_Color.html#Mode_SwitchColorSensorCompareReflectedLight">
+				<Description>
+					<![CDATA[<p><b>Mode:</b> NXT Color Sensor – Compare - NXT Color – Reflected Light Intensity (Blue)<br/><b>Use:</b> Choose between two sequences of blocks depending on the reflected light intensity.</p>]]>
+				</Description>
+			</Block>
+			<Block Mode="SwitchNXTColorCompareNXTAmbient" DisplayName="" Link="page.html?Path=editor%2FUsingSensors_Color.html#Mode_SwitchColorSensorCompareReflectedLight">
+				<Description>
+					<![CDATA[<p><b>Mode:</b> NXT Color Sensor – Compare - NXT Color – Ambient Light Intensity<br/><b>Use:</b> Choose between two sequences of blocks depending on the reflected light intensity.</p>]]>
+				</Description>
+			</Block>
+			<Block Mode="SwitchNXTColorCompareNXTRedRAW" DisplayName="" Link="page.html?Path=editor%2FUsingSensors_Color.html#Mode_SwitchColorSensorCompareReflectedLight">
+				<Description>
+					<![CDATA[<p><b>Mode:</b> NXT Color Sensor – Compare - NXT Color (Raw) – Reflected Light Intensity (Red)<br/><b>Use:</b> Choose between two sequences of blocks depending on the reflected light intensity.</p>]]>
+				</Description>
+			</Block>
+			<Block Mode="SwitchNXTColorCompareNXTGreenRAW" DisplayName="" Link="page.html?Path=editor%2FUsingSensors_Color.html#Mode_SwitchColorSensorCompareReflectedLight">
+				<Description>
+					<![CDATA[<p><b>Mode:</b> NXT Color Sensor – Compare - NXT Color (Green) – Reflected Light Intensity (Red)<br/><b>Use:</b> Choose between two sequences of blocks depending on the reflected light intensity.</p>]]>
+				</Description>
+			</Block>
+			<Block Mode="SwitchNXTColorCompareNXTBlueRAW" DisplayName="" Link="page.html?Path=editor%2FUsingSensors_Color.html#Mode_SwitchColorSensorCompareReflectedLight">
+				<Description>
+					<![CDATA[<p><b>Mode:</b> NXT Color Sensor – Compare - NXT Color (Blue) – Reflected Light Intensity (Red)<br/><b>Use:</b> Choose between two sequences of blocks depending on the reflected light intensity.</p>]]>
+				</Description>
+			</Block>
+			<Block Mode="SwitchNXTColorCompareNXTAmbientRAW" DisplayName="" Link="page.html?Path=editor%2FUsingSensors_Color.html#Mode_SwitchColorSensorCompareReflectedLight">
+				<Description>
+					<![CDATA[<p><b>Mode:</b> NXT Color Sensor – Compare - NXT Color (Raw) – Ambient Light Intensity<br/><b>Use:</b> Choose between two sequences of blocks depending on the ambient light intensity.</p>]]>
+				</Description>
+			</Block>
+			<Category Name="NXTCol_Norm" DisplayName="Read Normalize Value (Faster)">
+				<Block Mode="NXTCol_Norm1" DisplayName="Port 1">
+					<Description>
+						<![CDATA[<p>ReadNXTColNorm 1</p>]]>
+					</Description>
+				</Block>
+				<Block Mode="NXTCol_Norm2" DisplayName="Port 2">
+					<Description>
+						<![CDATA[<p>ReadNXTColNorm 2</p>]]>
+					</Description>
+				</Block>
+				<Block Mode="NXTCol_Norm3" DisplayName="Port 3">
+					<Description>
+						<![CDATA[<p>ReadNXTColNorm 3</p>]]>
+					</Description>
+				</Block>
+				<Block Mode="NXTCol_Norm4" DisplayName="Port 4">
+					<Description>
+						<![CDATA[<p>ReadNXTColNorm 4</p>]]>
+					</Description>
+				</Block>
+			</Category>
+			<Block Mode="Configuration" DisplayName="Sensor Configuration">
+				<Description>
+					<![CDATA[<p>Sensor Configuration</p>]]>
+				</Description>
+			</Block>
+			<Block Mode="ReadNXTColNorm" DisplayName="Read Normalize Value">
+				<Description>
+					<![CDATA[<p>ReadNXTColNorm</p>]]>
+				</Description>
+			</Block>
+		</PolyGroup>
+	</PolyGroups>
 </EditorStrings>
