@@ -3,7 +3,7 @@ NXT Color Sensor Block for EV3-G
 
 ![](https://github.com/a10036gt/EV3-NXT-Color-Block/raw/master/help/en-GB/NXTColor.png)
 
-You can download ev3b file to import this block：[NXTColorSensor_1.3.ev3b](https://github.com/a10036gt/EV3-NXT-Color-Block/releases/download/v1.3/NXTColorSensor_1.3.ev3b)
+You can download ev3b file to import this block：[Download from Release page](https://github.com/a10036gt/EV3-NXT-Color-Block/releases/)
 
 In LEGO® MINDSTORMS® EV3-G, We can use Color Sensor Block to control NXT Color Sensor,but it seems like not so well..
 So we made this Block to add support for turning on the Blue and Green LEDs on the NXT color sensor, also we added **Raw Mode**, it's very useful tools.
